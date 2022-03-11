@@ -9,8 +9,8 @@ from ml.transform_utils import transform_image
 from config import Configuration
 config = Configuration()
 
-@app.route('/classifications', methods=['GET', 'POST'])
-def Transformations():
+@app.route('/transformations', methods=['GET', 'POST'])
+def transformations():
     """API for selecting a model and an image and running a
     classification job. Returns the output scores from the
     model."""
@@ -24,7 +24,7 @@ def Transformations():
         contrast_id = form.contrast.data
         hue_id = form.hue.data
 
-        redis_url = Configuration.REDIS_URL
+        """redis_url = Configuration.REDIS_URL
         redis_conn = redis.from_url(redis_url)
         with Connection(redis_conn):
             q = Queue(name=Configuration.QUEUE)
@@ -34,13 +34,13 @@ def Transformations():
                 "contrast_id" : contrast_id,
                 "hue_id" : hue_id
             })
-            task = q.enqueue_job(job)
+            task = q.enqueue_job(job)"""
 
-        transform_image()
+        img_path = transform_image(image_id, brightness_id, contrast_id, saturation_id, hue_id)
 
         # returns the image classification output from the specified model
         # return render_template('classification_output.html', image_id=image_id, results=result_dict)
-        return render_template("transform_output.html", image_name)
+        return render_template("transform_output.html", img_path=img_path)
 
     # otherwise, it is a get request
     return render_template('transform_select.html', form=form)
