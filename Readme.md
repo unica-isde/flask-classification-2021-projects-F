@@ -2,7 +2,7 @@
 
 ## Documentation
 
-https://github.com/luckymls/flask-classification-2021-projects-F.wiki.git
+https://github.com/luckymls/flask-classification-2021-projects-F/wiki
 
 ## Download the repository
 
