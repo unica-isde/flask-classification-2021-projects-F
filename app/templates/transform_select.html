@@ -14,28 +14,42 @@
         <h4>
         <p>
             Brightness:
-            {{ form.brightness }}
-        </p>
-        </h4>
-                <h4>
-        <p>
-            Hue:
-            {{ form.hue }}
+            <div class="slidecontainer">
+                <input type="range" min="0" max="1" value="0" step="0.1" class="slider" id="brightness" name="brightness" oninput="this.nextElementSibling.value = this.value">
+                <output>0</output>
+            </div>
+
         </p>
         </h4>
                 <h4>
         <p>
             Saturation:
-            {{ form.saturation }}
+            <div class="slidecontainer">
+                <input type="range" min="0" max="1" value="0" step="0.1" class="slider" id="saturation" name="saturation" oninput="this.nextElementSibling.value = this.value">
+                <output>0</output>
+            </div>
+        </p>
+        </h4>
+                <h4>
+        <p>
+            Hue:
+            <div class="slidecontainer">
+                <input type="range" min="0" max="0.5" value="0" step="0.1" class="slider" id="hue" name="hue" oninput="this.nextElementSibling.value = this.value">
+                <output>0</output>
+            </div>
         </p>
         </h4>
                 <h4>
         <p>
             Contrast:
-            {{ form.contrast }}
+            <div class="slidecontainer">
+                <input type="range" min="0" max="1" value="0" step="0.1" class="slider" id="contrast" name="contrast" oninput="this.nextElementSibling.value = this.value">
+                <output>0</output>
+            </div>
         </p>
         </h4>
 
         <button type="submit" class="btn btn-dark mb-2">Submit</button>
     </form>
+
 {% endblock %}

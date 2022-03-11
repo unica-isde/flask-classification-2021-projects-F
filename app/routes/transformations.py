@@ -24,18 +24,6 @@ def transformations():
         contrast_id = form.contrast.data
         hue_id = form.hue.data
 
-        """redis_url = Configuration.REDIS_URL
-        redis_conn = redis.from_url(redis_url)
-        with Connection(redis_conn):
-            q = Queue(name=Configuration.QUEUE)
-            job = Job.create(classify_image, kwargs={
-                "brightness_id": brightness_id,
-                "saturation_id": saturation_id,
-                "contrast_id" : contrast_id,
-                "hue_id" : hue_id
-            })
-            task = q.enqueue_job(job)"""
-
         img_path = transform_image(image_id, brightness_id, contrast_id, saturation_id, hue_id)
 
         # returns the image classification output from the specified model
