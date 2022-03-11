@@ -5,10 +5,10 @@ from app.utils.list_images import list_images
 
 class TransformationForm(FlaskForm):
 
-    brightness = FloatField('brightness', validators = [NumberRange(min=0, max=1)])
-    saturation = FloatField('saturation', validators = [NumberRange(min=0, max=1)])
-    contrast = FloatField('contrast', validators = [NumberRange(min=0, max=1)])
-    hue = FloatField('hue', validators = [NumberRange(min=0, max=1)])
+    brightness = FloatField('brightness', validators = [NumberRange(min=0, max=1)], default=0)
+    saturation = FloatField('saturation', validators = [NumberRange(min=0, max=1)], default=0)
+    contrast = FloatField('contrast', validators = [NumberRange(min=0, max=1)], default=0)
+    hue = FloatField('hue', validators = [NumberRange(min=0, max=1)], default=0)
     image = SelectField('image', choices=list_images(), validators=[DataRequired()])
 
     submit = SubmitField('Submit')
