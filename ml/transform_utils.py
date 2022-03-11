@@ -13,6 +13,10 @@ def transform_image(img_id, brightness_id, contrast_id, saturation_id, hue_id):
     image corresponding to img_id."""
     img = fetch_image(img_id)
 
+    #Elimina tutte le vecchie immagini processate
+    for f in os.listdir(conf.transformed_folder_path):
+        os.remove(os.path.join(conf.transformed_folder_path, f))
+
     transform = transforms.Compose(
         [
             transforms.ToTensor(),
@@ -34,7 +38,6 @@ def transform_image(img_id, brightness_id, contrast_id, saturation_id, hue_id):
     now = datetime.now()
     img_name = str(now) + '.JPEG'
     output_path = os.path.join(conf.transformed_folder_path, img_name)
-
     torchvision.utils.save_image(preprocessed, output_path)
 
     return img_name
