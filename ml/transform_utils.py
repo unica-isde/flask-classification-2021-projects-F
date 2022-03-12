@@ -29,6 +29,7 @@ def transform_image(img_id, brightness_id, contrast_id, saturation_id, hue_id):
         ]
     )
 
+
     # apply transform from torchvision
     img = img.convert('RGB')
     preprocessed = transform(img)

@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import SubmitField, SelectField, FloatField
-from wtforms.validators import DataRequired, InputRequired, ValidationError
+from wtforms import SubmitField, SelectField
+from wtforms.validators import DataRequired
 
 
 from app.utils.list_images import list_images
