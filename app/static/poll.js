@@ -17,6 +17,8 @@ function update(jobId) {
                 case "finished":
                     $('#spinner').hide();
                     $('#waitText').text("");
+                    $('#bResultDiv').css("visibility", "visible"); // Show result button
+                    $('#bPlotDiv').css("visibility", "visible"); // Show plot button
                     makeGraph(data['data']);
                     break;
                 case "started":
@@ -29,6 +31,7 @@ function update(jobId) {
                 case "queued":
                     $('#waitText').text("Please wait ...");
                     $('#spinner').show();
+                    
                     setTimeout(function () {
                         update(jobId);
                     }, 1000);
