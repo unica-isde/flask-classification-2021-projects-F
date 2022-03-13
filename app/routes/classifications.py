@@ -10,7 +10,6 @@ from config import Configuration
 
 config = Configuration()
 
-
 @app.route('/classifications', methods=['GET', 'POST'])
 def classifications():
     """API for selecting a model and an image and running a 
@@ -27,7 +26,7 @@ def classifications():
             q = Queue(name=Configuration.QUEUE)
             job = Job.create(classify_image, kwargs={
                 "model_id": model_id,
-                "img_id": image_id
+                "img_id": image_id,
             })
             task = q.enqueue_job(job)
 
