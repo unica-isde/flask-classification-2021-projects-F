@@ -1,7 +1,7 @@
 from ml.classification_utils import fetch_image
 from torchvision import transforms
 import torchvision.utils
-import os
+import os,time
 from datetime import datetime
 
 from config import Configuration
@@ -38,7 +38,7 @@ def transform_image(img_id, brightness_id, contrast_id, saturation_id, hue_id):
 
     img.close()
 
-    now = datetime.now()
+    now = time.time_ns()
     img_name = str(now) + '.JPEG'
     output_path = os.path.join(conf.transformed_folder_path, img_name)
     torchvision.utils.save_image(preprocessed, output_path)
