@@ -1,4 +1,5 @@
 from .classifications import *
 from .classifications_id import *
-from .info import *
+from .classifications_upload import *
 from .home import *
+from .info import *
