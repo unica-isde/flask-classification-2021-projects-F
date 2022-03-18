@@ -7,7 +7,7 @@ class Configuration:
     """Contains the configuration information for the app."""
 
     # file upload
-    UPLOAD_FOLDER = os.path.join(project_root, 'app/static/uploaded_images')
+    UPLOAD_FOLDER = os.path.join(project_root, 'app/static/imagenet_subset')
     ALLOWED_EXTENSIONS = {'jpeg', 'jpg', 'png', 'webp', 'gif'}
     # classification
     image_folder_path = os.path.join(project_root, 'app/static/imagenet_subset')
