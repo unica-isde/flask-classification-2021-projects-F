@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>Select Model and Image</h1>
+    <form action="classifications_upload" method="post" enctype="multipart/form-data" novalidate>
+        {{ form.hidden_tag() }}
+        <h4>
+            Model:
+        </h4>
+        <p>
+            {{ form.model }}
+        </p>
+        <h4>
+            Image:
+        </h4>
+        <input type="file" accept="image/*" class="btn btn-dark mb-2" name="image" id="image">
+        <br>
+        <button type="submit" class="btn btn-dark mb-2" >Submit</button>
+    </form>
+{% endblock %}
