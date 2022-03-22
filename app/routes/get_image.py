@@ -34,7 +34,7 @@ def get_image(job_id=None):
 
         bar_plt = bar_chart(numbers, labels)
         FigureCanvas(bar_plt).print_png(png)
-
+        plt.close(plt.gcf())
     return Response(png.getvalue(),
     mimetype="image/png",
     headers={"Content-disposition":
