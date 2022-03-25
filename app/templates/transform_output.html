@@ -12,14 +12,11 @@
         }
 
     </style>
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <img class="large-front-thumbnail"
-                     src="{{ url_for('static', filename='transformed_image/'+img_path) }} "
-                     alt={{ image_id }}/>
-            </div>
-        </div>
+    <div class="row mt-2 justify-content-center">
+        <img class="img-fluid"
+             src="{{ url_for('static', filename='transformed_image/'+img_path) }} "
+             alt={{ image_id }}/>
+    </div>
 
 {% endblock %}
 
