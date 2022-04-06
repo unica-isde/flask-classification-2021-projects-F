@@ -3,10 +3,12 @@ from app import app
 from app.utils.result_from_job_id import result_from_job_id
 import json
 
-# Returns a JSON file from job results
+
 @app.route('/get_json/<string:job_id>')
 def get_json(job_id=None):
-    
+    '''
+    This function returns a JSON file from job results data
+    '''
     res=json.dumps({"status": "false", "description": "Error exporting JSON"})
     if job_id != None:
         

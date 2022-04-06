@@ -10,4 +10,7 @@ conf = Configuration()
 @app.route('/index', methods=['GET'])
 @app.route('/', methods=['GET'])
 def home():
+    ''' 
+    Render home.html page
+    '''
     return render_template('home.html')

@@ -12,9 +12,11 @@ config = Configuration()
 
 @app.route('/classifications', methods=['GET', 'POST'])
 def classifications():
-    """API for selecting a model and an image and running a 
+    '''
+    API for selecting a model and an image and running a 
     classification job. Returns the output scores from the 
-    model."""
+    model.
+    '''
     form = ClassificationForm()
     if form.validate_on_submit():  # POST
         image_id = form.image.data

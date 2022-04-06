@@ -11,9 +11,11 @@ config = Configuration()
 
 @app.route('/transformations', methods=['GET', 'POST'])
 def transformations():
-    """API for selecting a model and an image and running a
+    '''
+    API for selecting a model and an image and running a
     classification job. Returns the output scores from the
-    model."""
+    model.
+    '''
     image_name = "trans_image"
     form = TransformationForm()
     if form.validate_on_submit():  # POST

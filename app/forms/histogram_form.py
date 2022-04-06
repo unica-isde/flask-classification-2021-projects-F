@@ -10,7 +10,7 @@ conf = Configuration()
 
 class HistogramForm(FlaskForm):
     """
-    form used for the histogram api, it allows you to select an image from the provided dataset
+    Form used for the histogram api, it allows you to select an image from the provided dataset
     """
     image = SelectField('image', choices=list_images(), validators=[DataRequired()])
     submit = SubmitField('Submit')

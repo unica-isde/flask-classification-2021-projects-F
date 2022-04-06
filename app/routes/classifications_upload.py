@@ -12,6 +12,9 @@ config = Configuration()
 
 @app.route('/classifications_upload', methods=['GET', 'POST'])
 def classifications_upload():
+    '''
+    This function save the uploaded image, start the classification job and returns the classification results in a rendered page
+    '''
     form = UploadForm()
 
     if request.method == "POST":

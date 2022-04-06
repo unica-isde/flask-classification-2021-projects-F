@@ -9,6 +9,10 @@ from config import Configuration
 conf = Configuration()
 
 class ClassificationForm(FlaskForm):
+    
+    ''' 
+    Form used to let user to choose between models and images available
+    '''
     model = SelectField('model', choices=conf.models, validators=[DataRequired()])
     image = SelectField('image', choices=list_images(), validators=[DataRequired()])
 

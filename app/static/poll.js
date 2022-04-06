@@ -50,6 +50,9 @@ $(document).ready(function () {
 });
 
 function makeGraph(results) {
+    /**
+     * This function make a classification graph from the given dataset
+     */
     var ctx = document.getElementById("classificationOutput").getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'horizontalBar',

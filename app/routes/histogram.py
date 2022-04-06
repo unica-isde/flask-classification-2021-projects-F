@@ -13,7 +13,9 @@ config = Configuration()
 
 @app.route('/histogram', methods=['GET', 'POST'])
 def histogram():
-    """API for calculating the histogram of a selected image"""
+    '''
+    API for calculating the histogram of a selected image
+    '''
     form = HistogramForm()
     if form.validate_on_submit():  # POST
         image_id = form.image.data
