@@ -12,9 +12,8 @@ config = Configuration()
 @app.route('/transformations', methods=['GET', 'POST'])
 def transformations():
     '''
-    API for selecting a model and an image and running a
-    classification job. Returns the output scores from the
-    model.
+    API for selecting an image and a series of transformations to apply to the selected image.
+    Returns the output page with the image with the transformations applied to it
     '''
     image_name = "trans_image"
     form = TransformationForm()
