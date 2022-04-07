@@ -39,8 +39,7 @@ def classifications_upload():
                 "img_id": image_id
             })
             task = q.enqueue_job(job)
-        # returns the image classification output from the specified model
-        # return render_template('classification_output.html', image_id=image_id, results=result_dict)
+
         return render_template("classification_output_queue.html", image_id=image_id, jobID=task.get_id())
 
     return render_template('classifications_upload.html', form=form)
