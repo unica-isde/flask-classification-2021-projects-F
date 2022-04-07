@@ -15,7 +15,7 @@ def bar_chart(numbers, labels):
     colors = ['#6610f2', '#007bff', '#fd7e14', '#dc3545', '#28a745']
     
     ax.barh(labels, numbers, align='center', color=colors)
-    plt.legend(["Output scores"], loc=9, bbox_to_anchor=(0, 1, 1, 0.1), labelcolor="#000") # TODO: Change square color
+    plt.legend(["Output scores"], loc=9, bbox_to_anchor=(0, 1, 1, 0.1), labelcolor="#000")
     fig.tight_layout()
 
     return fig
