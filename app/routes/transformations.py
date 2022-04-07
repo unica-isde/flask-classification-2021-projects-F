@@ -27,9 +27,8 @@ def transformations():
 
         img_path = transform_image(image_id, brightness_id, contrast_id, saturation_id, hue_id)
 
-        # returns the image classification output from the specified model
-        # return render_template('classification_output.html', image_id=image_id, results=result_dict)
+
         return render_template("transform_output.html", img_path=img_path)
 
-    # otherwise, it is a get request
+
     return render_template('transform_select.html', form=form)
