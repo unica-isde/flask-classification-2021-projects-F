@@ -17,6 +17,8 @@ function update(jobId) {
                 case "finished":
                     $('#spinner').hide();
                     $('#waitText').text("");
+                    $('#bResultDiv').css("visibility", "visible"); // Show result button
+                    $('#bPlotDiv').css("visibility", "visible"); // Show plot button
                     makeGraph(data['data']);
                     break;
                 case "started":
@@ -29,6 +31,7 @@ function update(jobId) {
                 case "queued":
                     $('#waitText').text("Please wait ...");
                     $('#spinner').show();
+                    
                     setTimeout(function () {
                         update(jobId);
                     }, 1000);
@@ -47,6 +50,9 @@ $(document).ready(function () {
 });
 
 function makeGraph(results) {
+    /**
+     * This function make a classification graph from the given dataset
+     */
     var ctx = document.getElementById("classificationOutput").getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'horizontalBar',

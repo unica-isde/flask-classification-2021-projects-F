@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <style>
+        .large-front-thumbnail {
+            position: relative;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+    </style>
+    <div class="row mt-2 justify-content-center">
+        <img class="img-fluid"
+             src="{{ url_for('static', filename='transformed_image/'+img_path) }} "
+             alt={{ image_id }}/>
+    </div>
+
+{% endblock %}
+
+

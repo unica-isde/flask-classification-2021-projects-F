@@ -7,6 +7,7 @@ from ml.classification_utils import classify_image, \
     get_model, get_labels, fetch_image
 
 class TestMLUtils(unittest.TestCase):
+    
     def setUp(self):
         self.model_id = 'resnet18'
         self.image_id = 'n01443537_goldfish.JPEG'
